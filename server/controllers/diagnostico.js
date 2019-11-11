@@ -32,7 +32,10 @@ class Diagnostico {
     static lista_diagnostico_ci_10(req, res) {
         return diagnostico
         .findAll()
-        .then(data => res.status(200).json(data));
+        .then(data => res.status(200).json(data))
+        .catch( error => {
+            console.log(error)
+        })
     }
     //mostrar por codigo
     static one_diagnostico(req, res) {
